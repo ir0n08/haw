@@ -2,6 +2,16 @@ package com.prosiebensat1tech.haw_praktikum_3;
 
 import java.util.Scanner;
 
+/**
+* <h1>WordJubmle</h1>
+* Sawps smoe cahartcres aornud in the middle of your inputs wrods
+*
+* @author  Eisenmann, Paul
+* @see paul.eisenmann@prosiebensat1.com
+* @see https://github.com/ir0n08/haw/tree/master/year01-02/Task3
+* @version 1.0
+* @since   05-06-2020 
+*/
 public class WordJumble {
 	public static void jumbleWord(String word, StringBuilder builder) {
 
