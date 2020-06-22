@@ -7,7 +7,7 @@ package de.hawlandshut.calculus;
 * @author  Eisenmann, Paul
 * @see paul.eisenmann@prosiebensat1.com
 * @see https://github.com/ir0n08/haw/tree/master/year01-02/Task4
-* @version 1.0 
+* @version 1.1 
 * @since   19-06-2020 
 */
 
@@ -21,12 +21,12 @@ public class Cosine extends RealFunction implements Differentiable {
 	}
 
 	@Override
-	double evaluateAt(double x) {
+	public double evaluateAt(double x) {
 		return a * Math.cos(f*x); // basic cos func a * cos(f*x)
 	}
 
 	@Override
-	boolean inDomain(double x) {
+	public boolean inDomain(double x) {
 		return true; // is always in domain
 	}
 	

@@ -7,7 +7,7 @@ package de.hawlandshut.calculus;
 * @author  Eisenmann, Paul
 * @see paul.eisenmann@prosiebensat1.com
 * @see https://github.com/ir0n08/haw/tree/master/year01-02/Task4
-* @version 1.0 
+* @version 1.1 
 * @since   19-06-2020 
 */
 
@@ -18,17 +18,13 @@ public class Addition extends BinaryOperation implements Differentiable {
 	}
 
 	@Override
-	double evaluateAt(double x) {
+	public double evaluateAt(double x) {
 		return getLeft().evaluateAt(x) + getRight().evaluateAt(x); // return the values at x from the left and right side
 	}
 
 	@Override
-	boolean inDomain(double x) { // if both values at x are in the domain, return true
-		if(getRight().inDomain(x) && getLeft().inDomain(x)) { 
-			return true;
-		} else {
-			return false;
-		}
+	 public boolean inDomain(double x) { // if both values at x are in the domain, return true
+		return getRight().inDomain(x) && getLeft().inDomain(x);
 	}
 	
 	@Override
@@ -42,14 +38,14 @@ public class Addition extends BinaryOperation implements Differentiable {
 		var l = getLeft();
 		var r = getRight();
 		
-		if(! (l instanceof Cosine || l instanceof Sine || l instanceof Constant || l instanceof Exp || l instanceof Log)  ) {
+		if(!(l instanceof Differentiable) ) {
 			throw new DiffException("the left value is not correct input"); // check if left is valid
 		}
 		
-		if(! (r instanceof Cosine || r instanceof Sine || r instanceof Constant || r instanceof Exp || r instanceof Log)  ) {
+		if (!(r instanceof Differentiable) ) {
 			throw new DiffException("the right value is not correct input"); // check if left is valid
 		}
 		
-		return new Addition(l.derive(),r.derive()); // return new obj
+		return new Addition( ((Differentiable) l).derive(), ((Differentiable) r).derive() ); // return new obj
 	}
 }

@@ -23,12 +23,12 @@ public class CubicPolynomial extends RealFunction implements Differentiable {
 	}
 	
 	@Override
-	double evaluateAt(double x) {
+	public double evaluateAt(double x) {
 		return a * Math.pow(x, 3) + b* Math.pow(x, 2) + c*x + d; // return value with formula state above
 	}
 
 	@Override
-	boolean inDomain(double x) {
+	public boolean inDomain(double x) {
 		return true; // allways true
 	}
 	

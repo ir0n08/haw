@@ -7,12 +7,12 @@ package de.hawlandshut.calculus;
 * @author  Eisenmann, Paul
 * @see paul.eisenmann@prosiebensat1.com
 * @see https://github.com/ir0n08/haw/tree/master/year01-02/Task4
-* @version 1.0 
+* @version 1.1
 * @since   19-06-2020 
 */
 
-abstract class RealFunction { // abstract mother class of all
-	abstract double evaluateAt(double x);
-	abstract boolean inDomain(double x);
-	abstract RealFunction derive() throws DiffException;
+public abstract class RealFunction { // abstract mother class of all
+	public abstract double evaluateAt(double x);
+	public abstract boolean inDomain(double x);
+
 }

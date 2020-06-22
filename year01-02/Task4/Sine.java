@@ -21,12 +21,12 @@ public class Sine extends RealFunction implements Differentiable {
 	}
 
 	@Override
-	double evaluateAt(double x) {
+	public double evaluateAt(double x) {
 		return a * Math.sin(f*x); // return the sin function
 	}
 
 	@Override
-	boolean inDomain(double x) { 
+	public boolean inDomain(double x) { 
 		return true; // always true
 	}
 	

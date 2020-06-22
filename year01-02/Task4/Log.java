@@ -7,7 +7,7 @@ package de.hawlandshut.calculus;
 * @author  Eisenmann, Paul
 * @see paul.eisenmann@prosiebensat1.com
 * @see https://github.com/ir0n08/haw/tree/master/year01-02/Task4
-* @version 1.0 
+* @version 1.1 
 * @since   19-06-2020 
 */
 
@@ -24,12 +24,7 @@ public class Log extends RealFunction implements Differentiable {
 
 	@Override
 	public boolean inDomain(double x) {
-		try {
-			evaluateAt(x); // try if evaluation at x is okey
-		} catch(Exception OutsideOfDomainException) {
-			return false; // if not then return false
-		}
-		return true;
+		return x > 0;
 	}
 	
 	@Override
@@ -44,12 +39,8 @@ public class Log extends RealFunction implements Differentiable {
 	
 	private static class LogDerivative extends Log { // sub class to derive a log 
 		@Override
-		public boolean inDomain(double x) {
-			if(x > 0) { // check if greater zero
-				return true;
-			} else {
-				return false;
-			}
+		public boolean inDomain(double x) { // check if greater zero
+			return x > 0;
 		}
 		
 		@Override
